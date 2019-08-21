@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="codegen.xsd">
+	<variables>
+		<variable name="developer" value="Jeff" />
+		<variable name="email" value="for_office@qq.com" />
+		<variable name="company" value="agilebpm" />
+	</variables>
+
+	<templates>
+		<template id="entity" path="entity.ftl" />
+		<template id="dao" path="dao.ftl" />
+		<template id="manager" path="manager.ftl" />
+		<template id="managerImpl" path="managerImpl.ftl" />
+		<template id="mapping" path="mapping.ftl" />
+		<template id="get" path="get.html" />
+		<template id="edit" path="edit.html" />
+		<template id="list" path="list.html" />
+		<template id="controller" path="controller.ftl" />
+		<template id="mycatschema" path="schema.xml" />
+	</templates>
+	
+		<!--  core 模块-->
+		<files baseDir="C:\Users\miao_pc\git\agilebpm\platform\sys\sys-core">
+			<file refTemplate="mapping" filename="{class}.map.xml" dir="src\main\resources\com\dstz\{system}\mapping" sub="true" override="true" />
+			<file refTemplate="dao" filename="{class}Dao.java" dir="src\main\java\com\dstz\{system}{packageForder}\dao" sub="true" override="true" />
+			<file refTemplate="entity" filename="{class}.java" dir="src\main\java\com\dstz\{system}{packageForder}\model" sub="true" override="true" /> 
+			<file refTemplate="manager" filename="{class}Manager.java" dir="src\main\java\com\dstz\{system}{packageForder}\manager" sub="false" override="true" />
+			<file refTemplate="managerImpl" filename="{class}ManagerImpl.java" dir="src\main\java\com\dstz\{system}{packageForder}\manager\impl" sub="false" override="true" />
+		</files>
+		 
+		
+		 <!--  前段 模块 	
+		<files baseDir="C:\Users\miao_pc\git\agilebpm\bpm-explorer"> 
+			<file refTemplate="edit" filename="{classVar}Edit.html" dir="{system}\{classVar}" override="true" />
+			<file refTemplate="list" filename="{classVar}List.html" dir="{system}\{classVar}" override="true" />
+			<file refTemplate="get" filename="{classVar}Get.html" dir="{system}\{classVar}" override="true" />
+		</files> 
+	 -->
+		
+	  <!-- package 可以为空 "" -->
+	<table tableName="sys_connect_record">
+		<variable name="class" value="SysConnectRecord"/>
+		<variable name="package" value=".core"/>
+		<variable name="packageForder" value="\core"/>  
+	</table>
+
+</config>
